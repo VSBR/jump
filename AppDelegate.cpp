@@ -1,5 +1,5 @@
 #include "AppDelegate.h"
-#include "HelloWorldScene.h"
+#include "GameScene.h"
 
 USING_NS_CC;
 
@@ -12,6 +12,7 @@ AppDelegate::~AppDelegate()
 }
 
 bool AppDelegate::applicationDidFinishLaunching() {
+/*
     // initialize director
     auto director = Director::getInstance();
     auto glview = director->getOpenGLView();
@@ -31,6 +32,17 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     // run
     director->runWithScene(scene);
+
+    return true;
+*/
+    CCDirector* pDirector = CCDirector::sharedDirector();
+    CCEGLView* pEGVView = CCEGLView::sharedOpenGLView();
+    pDirector->setOpenGLView(pEGVView);
+    pDirector->setDisplayStats(true);
+    pDirector->setAnimationInterval(1.0 / 60);
+
+    CCScene *pScene = GameScene::scene();
+    pDirector->runWithScene(pScene);
 
     return true;
 }
