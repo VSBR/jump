@@ -3,7 +3,7 @@
 
 #include "cocos2d.h"
 
-class CCPlaySE : public cocos2dx::CCActionInstant
+class CCPlaySE : public cocos2d::CCActionInstant
 {
 public:
     CCPlaySE(std::string sound);
